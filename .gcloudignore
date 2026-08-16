@@ -1,0 +1,19 @@
+.gcloudignore
+.git
+.gitignore
+
+# Yüklemeyi yavaşlatan gereksiz klasörler
+node_modules/
+.next/
+out/
+build/
+
+# Diğer projeler (Frontend deploy edilirken backend ve admin kodlarının yüklenmesini engeller)
+api/
+admin/
+scratch/
+
+# Ortam değişkenleri (genelde Vercel/Cloud Run arayüzünden girilir, ancak biz manuel ekliyoruz)
+#.env
+#.env.production
+.env.local

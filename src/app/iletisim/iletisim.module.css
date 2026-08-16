@@ -1,0 +1,167 @@
+.hero {
+  position: relative;
+  padding: calc(var(--nav-height) + var(--space-4xl)) 0 var(--space-4xl);
+  background-color: var(--color-dark);
+  background-image: 
+    linear-gradient(rgba(26, 10, 10, 0.85), rgba(26, 10, 10, 0.95)),
+    url("/images/bg_dark_culinary.png");
+  background-size: 500px;
+  background-repeat: repeat;
+  background-position: center;
+}
+
+.tagline {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+}
+
+.heroTitle {
+  font-size: var(--text-5xl);
+  color: #fff;
+  margin-bottom: var(--space-lg);
+}
+
+.heroDesc {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 640px;
+}
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: var(--space-3xl);
+  align-items: flex-start;
+}
+
+/* ── Info ── */
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.infoIcon {
+  font-size: var(--text-xl);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.infoItem strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+
+.infoValue {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.infoLink {
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  transition: color var(--duration-fast);
+}
+
+.infoLink:hover {
+  color: var(--color-primary-light);
+}
+
+/* ── Form ── */
+.form {
+  background: var(--color-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-xl);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-md);
+}
+
+.formTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-xl);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.field label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.field input,
+.field select,
+.field textarea {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  transition: border-color var(--duration-fast);
+  outline: none;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(139, 0, 0, 0.08);
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+/* ── Map ── */
+.mapSection {
+  width: 100%;
+  line-height: 0;
+}
+
+.mapSection iframe {
+  width: 100%;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: var(--text-3xl);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}

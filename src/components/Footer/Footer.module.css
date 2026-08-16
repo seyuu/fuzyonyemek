@@ -1,0 +1,180 @@
+.footer {
+  background: var(--color-dark);
+  color: var(--color-text-on-dark);
+  padding: var(--space-3xl) 0 var(--space-xl);
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+}
+
+/* ── Brand Column ── */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.brandName {
+  display: inline-block;
+  margin-bottom: var(--space-sm);
+}
+
+.logoImage {
+  height: 90px;
+  width: auto;
+  object-fit: contain;
+}
+
+.brandDesc {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  max-width: 320px;
+}
+
+/* ── Columns ── */
+.colTitle {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-lg);
+}
+
+.colLinks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.colLink {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: var(--text-sm);
+  transition: color var(--duration-fast), padding-left var(--duration-normal) var(--ease-out);
+}
+
+.colLink:hover {
+  color: #fff;
+  padding-left: 6px;
+}
+
+.socialIconLink {
+  color: rgba(255, 255, 255, 0.6);
+  transition: color var(--duration-fast);
+}
+
+.socialIconLink:hover {
+  color: var(--color-primary);
+}
+
+/* ── Contact Info ── */
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-md);
+  line-height: 1.5;
+}
+
+.contactIcon {
+  color: var(--color-accent);
+  font-size: var(--text-lg);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── Bottom Bar ── */
+.bottom {
+  border-top: 1px solid var(--color-dark-border);
+  padding-top: var(--space-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.copyright {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.4);
+  flex: 1;
+}
+
+.developedBy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.4);
+  flex: 1;
+  text-decoration: none;
+  transition: color var(--duration-fast);
+}
+
+.developedBy:hover {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.kioLogoImage {
+  height: 36px;
+  width: auto;
+  opacity: 0.25;
+  filter: brightness(0) invert(1); /* Forces any logo to be pure white */
+  transition: all var(--duration-normal) ease;
+}
+
+.developedBy:hover .kioLogoImage {
+  opacity: 1;
+  filter: brightness(0) invert(1);
+}
+
+.bottomLinks {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-lg);
+  flex: 1;
+}
+
+.bottomLink {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.4);
+  transition: color var(--duration-fast);
+}
+
+.bottomLink:hover {
+  color: var(--color-accent);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .footerGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+  }
+
+  .colContactBlock {
+    grid-column: 1 / -1;
+  }
+
+  .bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .bottomLinks {
+    justify-content: center;
+  }
+}

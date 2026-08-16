@@ -1,0 +1,108 @@
+.hero {
+  position: relative;
+  padding: calc(var(--nav-height) + var(--space-4xl)) 0 var(--space-4xl);
+  background-color: var(--color-dark);
+  background-image: 
+    linear-gradient(rgba(26, 10, 10, 0.85), rgba(26, 10, 10, 0.95)),
+    url("/images/bg_dark_culinary.png");
+  background-size: 500px;
+  background-repeat: repeat;
+  background-position: center;
+}
+
+.tagline {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  margin-bottom: var(--space-md);
+}
+
+.heroTitle {
+  font-size: var(--text-5xl);
+  color: #fff;
+  margin-bottom: var(--space-lg);
+}
+
+.heroDesc {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 640px;
+}
+
+/* ── Grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.item {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.itemInner {
+  position: relative;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-alt) 0%,
+    var(--color-bg) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-normal) var(--ease-spring);
+}
+
+.itemInner:hover .galleryImage {
+  transform: scale(1.1);
+}
+
+.itemOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 50%);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-lg);
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.itemInner:hover .itemOverlay {
+  opacity: 1;
+}
+
+.itemCaption {
+  color: #fff;
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: var(--text-3xl);
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 375px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

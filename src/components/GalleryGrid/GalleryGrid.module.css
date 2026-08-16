@@ -1,0 +1,114 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.item {
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+}
+
+.itemInner {
+  position: relative;
+  aspect-ratio: 1;
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-alt) 0%,
+    var(--color-bg) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-normal) var(--ease-spring);
+}
+
+.itemInner:hover .galleryImage {
+  transform: scale(1.1);
+}
+
+/* ── Lightbox ── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn var(--duration-fast) var(--ease-out);
+}
+
+.lightboxImage {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 40px rgba(0,0,0,0.5);
+  user-select: none;
+}
+
+.closeBtn {
+  position: absolute;
+  top: var(--space-xl);
+  right: var(--space-xl);
+  color: #fff;
+  cursor: pointer;
+  z-index: 10000;
+  opacity: 0.7;
+  transition: opacity var(--duration-fast);
+}
+
+.closeBtn:hover {
+  opacity: 1;
+}
+
+.navBtnLeft,
+.navBtnRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  cursor: pointer;
+  z-index: 10000;
+  opacity: 0.5;
+  transition: opacity var(--duration-fast);
+  padding: var(--space-md);
+}
+
+.navBtnLeft:hover,
+.navBtnRight:hover {
+  opacity: 1;
+}
+
+.navBtnLeft { left: var(--space-lg); }
+.navBtnRight { right: var(--space-lg); }
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .navBtnLeft { left: var(--space-xs); }
+  .navBtnRight { right: var(--space-xs); }
+  .closeBtn { top: var(--space-md); right: var(--space-md); }
+}
+
+@media (max-width: 375px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
